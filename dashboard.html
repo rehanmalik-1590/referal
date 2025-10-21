@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DribZap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="videos.html" class="nav-link">Videos</a>
+                <a href="tasks.html" class="nav-link">Tasks</a>
+                <a href="referrals.html" class="nav-link">Referrals</a>
+                <a href="withdraw.html" class="nav-link">Withdraw</a>
+                <a href="#" class="nav-link" id="logout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Panel Link (Visible when admin is logged in) -->
+    <a href="admin-dashboard.html" class="admin-panel-link" id="adminPanelLink" style="display: none;">
+        Admin Panel
+    </a>
+
+    <section class="dashboard">
+        <div class="container">
+            <h1 id="welcomeMessage">Dashboard</h1>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>$25.50</h3>
+                    <p>Total Earnings</p>
+                </div>
+                <div class="stat-card">
+                    <h3>150</h3>
+                    <p>Videos Watched</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>Referrals</p>
+                </div>
+                <div class="stat-card">
+                    <h3>$10.00</h3>
+                    <p>Available for Withdrawal</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="videos.html" class="action-card">
+                        <h3>Watch Videos</h3>
+                        <p>Earn $0.10 per video</p>
+                    </a>
+                    <a href="tasks.html" class="action-card">
+                        <h3>Complete Tasks</h3>
+                        <p>Earn up to $5 per task</p>
+                    </a>
+                    <a href="referrals.html" class="action-card">
+                        <h3>Refer Friends</h3>
+                        <p>Earn 20% commission</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

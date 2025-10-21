@@ -1,0 +1,33 @@
+/* ===========================
+   Graph UI styles — css/graph.css
+   For the graph.html viewer (futuristic + controls)
+   =========================== */
+
+.graph-page{
+  min-height:70vh;
+  display:flex; gap:20px; padding:28px;
+  align-items:flex-start; justify-content:center;
+}
+.graph-panel{
+  flex: 1 1 640px; max-width:980px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px; padding:18px; border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.55); backdrop-filter: blur(10px);
+}
+.graph-controls{
+  width:320px; min-width:260px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+}
+.control-row{ margin-bottom:12px; display:flex; flex-direction:column; gap:8px; }
+.control-row label{ color:var(--muted); font-weight:700; }
+.dataset-list{ display:flex; flex-direction:column; gap:8px; }
+.dataset-item{ display:flex; gap:8px; align-items:center; justify-content:space-between; padding:8px; border-radius:8px; background: rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.02); cursor:pointer; }
+.dataset-item:hover{ transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.45); }
+.input-small{ padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color:var(--text); width:100%; }
+.btn-graph{ padding:10px 12px; border-radius:10px; font-weight:800; border:none; cursor:pointer; background: linear-gradient(90deg, rgba(var(--accent),0.95), rgba(var(--accent-2),0.95)); color:#001024; }
+.legend{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+.legend .dot{ width:12px; height:12px; border-radius:50%; display:inline-block; margin-right:6px; vertical-align:middle; }
+.small-muted{ color:var(--muted); font-size:0.92rem; }
+@media (max-width:980px){ .graph-page{ flex-direction:column; padding:16px; } .graph-controls{ width:100%; } }

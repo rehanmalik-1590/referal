@@ -1,0 +1,140 @@
+/* Tablet */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 27, 42, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border-top: 1px solid var(--glass-border);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .history-item {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .referral-link {
+        flex-direction: column;
+    }
+
+    #copyLink {
+        margin-top: 10px;
+    }
+
+    .auth-card {
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 140px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid,
+    .videos-grid,
+    .tasks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .referral-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .feature-card,
+    .stat-card,
+    .action-card,
+    .video-card,
+    .task-card,
+    .referral-box,
+    .referral-list,
+    .balance-card,
+    .withdraw-form,
+    .withdrawal-history {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1300px;
+    }
+    
+    .hero h1 {
+        font-size: 4rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

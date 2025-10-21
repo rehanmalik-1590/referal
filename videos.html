@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - DribZap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="videos.html" class="nav-link active">Videos</a>
+                <a href="tasks.html" class="nav-link">Tasks</a>
+                <a href="referrals.html" class="nav-link">Referrals</a>
+                <a href="withdraw.html" class="nav-link">Withdraw</a>
+                <a href="#" class="nav-link" id="logout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="videos-page">
+        <div class="container">
+            <h1>Watch Videos & Earn Money</h1>
+            <div class="balance-info">
+                <p>Earn $0.10 per video | Available Videos: <span id="videoCount">15</span></p>
+            </div>
+
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Video #1</h3>
+                    <p>Watch 30 seconds to earn $0.10</p>
+                    <button class="btn-watch" data-video="1">Watch Now</button>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Video #2</h3>
+                    <p>Watch 45 seconds to earn $0.10</p>
+                    <button class="btn-watch" data-video="2">Watch Now</button>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Video #3</h3>
+                    <p>Watch 60 seconds to earn $0.15</p>
+                    <button class="btn-watch" data-video="3">Watch Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/videos.js"></script>
+</body>
+</html>

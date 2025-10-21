@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Graph Viewer — Futuristic</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/graph.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Optional nav for theme controls -->
+  <div class="navbar">
+    <div class="nav-container container">
+      <div class="nav-logo"><h2>Graph Viewer <span class="logo-dot"></span></h2></div>
+      <div class="nav-actions theme-controls">
+        <button class="btn" data-theme-toggle>Toggle Theme</button>
+        <input class="color-input" type="text" data-color-input placeholder="e.g. #7c3aed or 124,58,237" />
+        <button class="btn" data-apply-color>Apply Color</button>
+        <button class="btn" data-reset-color>Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <main style="padding-top:100px;">
+    <div class="container graph-page">
+      <div class="graph-panel card">
+        <canvas id="myChart" width="1200" height="520"></canvas>
+        <div class="small-muted" style="margin-top:10px;">Tip: Use the controls on right to switch datasets or provide custom CSV values.</div>
+      </div>
+
+      <aside class="graph-controls">
+        <div class="control-row">
+          <label>Choose dataset (preset)</label>
+          <div class="dataset-list" id="datasetList">
+            <!-- JS will populate -->
+          </div>
+        </div>
+
+        <div class="control-row">
+          <label>Custom dataset (comma separated numbers)</label>
+          <input id="customData" class="input-small" placeholder="e.g. 10, 23, 5, 12, 33" />
+          <input id="customLabels" class="input-small" placeholder="Optional labels (comma separated) e.g. Jan,Feb,Mar" style="margin-top:8px;" />
+          <button class="btn-graph" id="applyCustom">Apply Custom Dataset</button>
+        </div>
+
+        <div class="control-row">
+          <label>Chart type</label>
+          <select id="chartType" class="input-small">
+            <option value="line">Line</option>
+            <option value="bar">Bar</option>
+            <option value="radar">Radar</option>
+            <option value="pie">Pie</option>
+            <option value="doughnut">Doughnut</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <label>Options</label>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-graph" id="btnDownload">Download PNG</button>
+            <button class="btn-graph" id="btnReset">Reset</button>
+          </div>
+        </div>
+
+        <div style="margin-top:8px;">
+          <div class="small-muted">Available presets: simple trends, seasonal, random, growth.</div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/graph.js"></script>
+</body>
+</html>

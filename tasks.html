@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - DribZap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="videos.html" class="nav-link">Videos</a>
+                <a href="tasks.html" class="nav-link active">Tasks</a>
+                <a href="referrals.html" class="nav-link">Referrals</a>
+                <a href="withdraw.html" class="nav-link">Withdraw</a>
+                <a href="#" class="nav-link" id="logout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tasks-page">
+        <div class="container">
+            <h1>Complete Tasks & Earn Rewards</h1>
+            
+            <div class="tasks-grid">
+                <div class="task-card">
+                    <h3>Follow on Instagram</h3>
+                    <p>Follow our Instagram page and get $1.00</p>
+                    <div class="task-reward">$1.00</div>
+                    <button class="btn-task" data-task="instagram">Start Task</button>
+                </div>
+
+                <div class="task-card">
+                    <h3>Join Telegram Channel</h3>
+                    <p>Join our Telegram channel and get $0.50</p>
+                    <div class="task-reward">$0.50</div>
+                    <button class="btn-task" data-task="telegram">Start Task</button>
+                </div>
+
+                <div class="task-card">
+                    <h3>Share on Facebook</h3>
+                    <p>Share our website on Facebook and get $2.00</p>
+                    <div class="task-reward">$2.00</div>
+                    <button class="btn-task" data-task="facebook">Start Task</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/tasks.js"></script>
+</body>
+</html>

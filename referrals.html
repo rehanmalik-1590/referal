@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referrals - DribZap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="videos.html" class="nav-link">Videos</a>
+                <a href="tasks.html" class="nav-link">Tasks</a>
+                <a href="referrals.html" class="nav-link active">Referrals</a>
+                <a href="withdraw.html" class="nav-link">Withdraw</a>
+                <a href="#" class="nav-link" id="logout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="referrals-page">
+        <div class="container">
+            <h1>Refer Friends & Earn Commission</h1>
+            
+            <div class="referral-stats">
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>Total Referrals</p>
+                </div>
+                <div class="stat-card">
+                    <h3>$12.50</h3>
+                    <p>Referral Earnings</p>
+                </div>
+                <div class="stat-card">
+                    <h3>20%</h3>
+                    <p>Commission Rate</p>
+                </div>
+            </div>
+
+            <div class="referral-box">
+                <h2>Your Referral Link</h2>
+                <div class="referral-link">
+                    <input type="text" id="referralLink" value="https://dribzap.site/register?ref=user123" readonly>
+                    <button id="copyLink">Copy</button>
+                </div>
+                <p class="referral-info">Earn 20% commission on your referrals' earnings</p>
+            </div>
+
+            <div class="referral-list">
+                <h2>Your Referrals</h2>
+                <div class="referral-item">
+                    <span>user1@email.com</span>
+                    <span>$2.50 earned</span>
+                </div>
+                <div class="referral-item">
+                    <span>user2@email.com</span>
+                    <span>$3.00 earned</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/referrals.js"></script>
+</body>
+</html>
