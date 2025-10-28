@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawals - DribZap Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="navbar admin-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap <span class="admin-badge">Admin</span></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="admin-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="admin-users.html" class="nav-link">Users</a>
+                <a href="admin-withdrawals.html" class="nav-link active">Withdrawals</a>
+                <a href="admin-settings.html" class="nav-link">Settings</a>
+                <a href="../dashboard.html" class="nav-link">User Dashboard</a>
+                <a href="#" class="nav-link" id="adminLogout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="admin-avatar">
+                    <div class="avatar-placeholder">AD</div>
+                </div>
+                <h3 id="adminUsername">Admin User</h3>
+                <p>Super Administrator</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-users.html" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Users Management
+                </a>
+                <a href="admin-withdrawals.html" class="sidebar-link active">
+                    <span class="sidebar-icon">💰</span>
+                    Withdrawals
+                </a>
+                <a href="admin-settings.html" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+                <a href="../dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🌐</span>
+                    User Dashboard
+                </a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1>Withdrawals Management</h1>
+                <div class="admin-actions">
+                    <button class="btn-admin btn-primary" id="processAll">
+                        <span class="btn-icon">⚡</span>
+                        Process All
+                    </button>
+                    <button class="btn-admin btn-secondary">
+                        <span class="btn-icon">📊</span>
+                        Analytics
+                    </button>
+                </div>
+            </div>
+
+            <!-- Withdrawal Stats -->
+            <div class="stats-overview">
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>$8,245</h3>
+                        <p>Total Processed</p>
+                        <span class="stat-trend positive">+15.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-content">
+                        <h3>42</h3>
+                        <p>Pending Requests</p>
+                        <span class="stat-trend negative">+8.7%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3>156</h3>
+                        <p>Completed Today</p>
+                        <span class="stat-trend positive">+22.1%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-content">
+                        <h3>8</h3>
+                        <p>Rejected Today</p>
+                        <span class="stat-trend negative">-3.2%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Withdrawals Table -->
+            <div class="data-table">
+                <div class="table-header">
+                    <h2>Withdrawal Requests</h2>
+                    <input type="text" class="table-search" placeholder="Search withdrawals...">
+                </div>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                                <th>Requested</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="user-avatar">JD</div>
+                                        <div class="user-details">
+                                            <div class="user-name">John Doe</div>
+                                            <div class="user-handle">@johndoe</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$25.00</td>
+                                <td>PayPal</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>2024-01-20 14:30</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-approve">Approve</button>
+                                        <button class="btn-action btn-reject">Reject</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="user-avatar">SS</div>
+                                        <div class="user-details">
+                                            <div class="user-name">Sarah Smith</div>
+                                            <div class="user-handle">@sarahs</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$50.00</td>
+                                <td>Bank Transfer</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>2024-01-19 09:15</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-view">View</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="user-avatar">MJ</div>
+                                        <div class="user-details">
+                                            <div class="user-name">Mike Johnson</div>
+                                            <div class="user-handle">@mikej</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$15.00</td>
+                                <td>PayPal</td>
+                                <td><span class="status-badge status-rejected">Rejected</span></td>
+                                <td>2024-01-18 16:45</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-view">View</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../js/admin-withdrawals.js"></script>
+</body>
+</html>

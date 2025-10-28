@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - DribZap</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-dashboard">
+    <!-- Admin Navigation -->
+    <nav class="navbar admin-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap <span class="admin-badge">Admin</span></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="admin-dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="admin-users.html" class="nav-link">Users</a>
+                <a href="admin-withdrawals.html" class="nav-link">Withdrawals</a>
+                <a href="admin-settings.html" class="nav-link">Settings</a>
+                <a href="../dashboard.html" class="nav-link">User Dashboard</a>
+                <a href="#" class="nav-link" id="adminLogout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Sidebar -->
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="admin-avatar">
+                    <div class="avatar-placeholder">AD</div>
+                </div>
+                <h3 id="adminUsername">Admin User</h3>
+                <p>Super Administrator</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="sidebar-link active">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-users.html" class="sidebar-link">
+                    <span class="sidebar-icon">👥</span>
+                    Users Management
+                </a>
+                <a href="admin-withdrawals.html" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Withdrawals
+                </a>
+                <a href="admin-settings.html" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+                <a href="../dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🌐</span>
+                    User Dashboard
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div class="admin-actions">
+                    <button class="btn-admin btn-primary" id="exportReport">
+                        <span class="btn-icon">📥</span>
+                        Export Report
+                    </button>
+                    <button class="btn-admin btn-secondary" id="refreshData">
+                        <span class="btn-icon">🔄</span>
+                        Refresh Data
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-overview">
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3 id="totalEarnings">$12,458.50</h3>
+                        <p>Total Revenue</p>
+                        <span class="stat-trend positive">+12.5%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <h3 id="totalUsers">2,847</h3>
+                        <p>Total Users</p>
+                        <span class="stat-trend positive">+8.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">📤</div>
+                    <div class="stat-content">
+                        <h3 id="totalWithdrawals">$3,245.80</h3>
+                        <p>Total Withdrawals</p>
+                        <span class="stat-trend negative">-2.1%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-content">
+                        <h3 id="pendingWithdrawals">42</h3>
+                        <p>Pending Withdrawals</p>
+                        <span class="stat-trend positive">+5.3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Revenue Analytics</h3>
+                        <select class="chart-filter" id="revenueFilter">
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 90 Days</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>User Growth</h3>
+                        <select class="chart-filter" id="usersFilter">
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 90 Days</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="usersChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Activity Distribution</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Platform Earnings</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="earningsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="admin-users.html" class="action-card">
+                        <h3>Manage Users</h3>
+                        <p>View and manage all users</p>
+                    </a>
+                    <a href="admin-withdrawals.html" class="action-card">
+                        <h3>Process Withdrawals</h3>
+                        <p>Approve or reject withdrawal requests</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">💰</div>
+                        <div class="activity-content">
+                            <p><strong>John Doe</strong> completed a video task</p>
+                            <span class="activity-time">2 minutes ago</span>
+                        </div>
+                        <div class="activity-amount">+$0.10</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon primary">👥</div>
+                        <div class="activity-content">
+                            <p><strong>Sarah Smith</strong> referred a new user</p>
+                            <span class="activity-time">15 minutes ago</span>
+                        </div>
+                        <div class="activity-amount">+$1.50</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon warning">💸</div>
+                        <div class="activity-content">
+                            <p><strong>Mike Johnson</strong> requested withdrawal</p>
+                            <span class="activity-time">1 hour ago</span>
+                        </div>
+                        <div class="activity-amount">-$25.00</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon success">📹</div>
+                        <div class="activity-content">
+                            <p><strong>Emma Wilson</strong> watched 5 videos</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-amount">+$0.50</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../js/admin-dashboard.js"></script>
+</body>
+</html>

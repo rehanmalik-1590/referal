@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Management - DribZap Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="navbar admin-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap <span class="admin-badge">Admin</span></h2>
+            </div>
+            <div class="nav-menu">
+                <a href="admin-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="admin-users.html" class="nav-link active">Users</a>
+                <a href="admin-withdrawals.html" class="nav-link">Withdrawals</a>
+                <a href="admin-settings.html" class="nav-link">Settings</a>
+                <a href="../dashboard.html" class="nav-link">User Dashboard</a>
+                <a href="#" class="nav-link" id="adminLogout">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="admin-avatar">
+                    <div class="avatar-placeholder">AD</div>
+                </div>
+                <h3 id="adminUsername">Admin User</h3>
+                <p>Super Administrator</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="admin-users.html" class="sidebar-link active">
+                    <span class="sidebar-icon">👥</span>
+                    Users Management
+                </a>
+                <a href="admin-withdrawals.html" class="sidebar-link">
+                    <span class="sidebar-icon">💰</span>
+                    Withdrawals
+                </a>
+                <a href="admin-settings.html" class="sidebar-link">
+                    <span class="sidebar-icon">⚙️</span>
+                    Settings
+                </a>
+                <a href="../dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">🌐</span>
+                    User Dashboard
+                </a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1>Users Management</h1>
+                <div class="admin-actions">
+                    <button class="btn-admin btn-primary" id="addUserBtn">
+                        <span class="btn-icon">➕</span>
+                        Add User
+                    </button>
+                    <button class="btn-admin btn-secondary">
+                        <span class="btn-icon">📥</span>
+                        Export Users
+                    </button>
+                </div>
+            </div>
+
+            <!-- Users Stats -->
+            <div class="stats-overview">
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <h3>2,847</h3>
+                        <p>Total Users</p>
+                        <span class="stat-trend positive">+8.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3>2,541</h3>
+                        <p>Active Users</p>
+                        <span class="stat-trend positive">+5.7%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>1,892</h3>
+                        <p>Earning Users</p>
+                        <span class="stat-trend positive">+12.3%</span>
+                    </div>
+                </div>
+                <div class="stat-card admin-stat">
+                    <div class="stat-icon">🔗</div>
+                    <div class="stat-content">
+                        <h3>743</h3>
+                        <p>Referral Users</p>
+                        <span class="stat-trend positive">+9.1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Table -->
+            <div class="data-table">
+                <div class="table-header">
+                    <h2>All Users</h2>
+                    <input type="text" class="table-search" placeholder="Search users...">
+                </div>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Balance</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="user-avatar">JD</div>
+                                        <div class="user-details">
+                                            <div class="user-name">John Doe</div>
+                                            <div class="user-handle">@johndoe</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>john.doe@email.com</td>
+                                <td>$25.50</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>2024-01-15</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-edit">Edit</button>
+                                        <button class="btn-action btn-block">Block</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="user-avatar">SS</div>
+                                        <div class="user-details">
+                                            <div class="user-name">Sarah Smith</div>
+                                            <div class="user-handle">@sarahs</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>sarah.smith@email.com</td>
+                                <td>$42.75</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>2024-01-12</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-edit">Edit</button>
+                                        <button class="btn-action btn-block">Block</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="user-avatar">MJ</div>
+                                        <div class="user-details">
+                                            <div class="user-name">Mike Johnson</div>
+                                            <div class="user-handle">@mikej</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>mike.j@email.com</td>
+                                <td>$18.20</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>2024-01-18</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-edit">Edit</button>
+                                        <button class="btn-action btn-block">Block</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../js/admin-users.js"></script>
+</body>
+</html>

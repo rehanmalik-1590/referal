@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - DribZap</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="admin-auth-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DribZap</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../login.html" class="nav-link">User Login</a>
+                <a href="../register.html" class="nav-link">User Register</a>
+                <a href="admin-login.html" class="nav-link active admin-link">Admin Login</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container admin-auth-container">
+        <div class="auth-card admin-auth-card">
+            <div class="admin-auth-header">
+                <h2>Admin Panel</h2>
+                <p>Administrator Access</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="adminLoginForm" class="auth-form active">
+                <div class="form-group">
+                    <label for="adminEmail">Admin Email</label>
+                    <input type="email" id="adminEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <button type="submit" class="btn-auth btn-admin">Login to Admin Panel</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="adminRegisterForm" class="auth-form">
+                <div class="form-group">
+                    <label for="adminFullName">Full Name</label>
+                    <input type="text" id="adminFullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminRegEmail">Email</label>
+                    <input type="email" id="adminRegEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminRegPassword">Password</label>
+                    <input type="password" id="adminRegPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminConfirmPassword">Confirm Password</label>
+                    <input type="password" id="adminConfirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminSecretKey">Admin Secret Key</label>
+                    <input type="password" id="adminSecretKey" required placeholder="Enter admin secret key">
+                </div>
+                <button type="submit" class="btn-auth btn-admin">Create Admin Account</button>
+            </form>
+
+            <div class="auth-link">
+                <a href="../dashboard.html">← Back to User Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/admin-auth.js"></script>
+</body>
+</html>
